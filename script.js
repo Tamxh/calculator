@@ -159,3 +159,13 @@ function handlePercent() {
 function roundResult(n) {
     return parseFloat(n.toPrecision(10)).toString();
 }
+
+//keyboard support
+document.addEventListener('keydown', (e) => {
+    if ('0123456789'.includes(e.key)) { handleInput(e.key); return; }
+    if ('+-*/'.includes(e.key))       { handleInput(e.key); return; }
+    if (e.key === 'Enter')            { handleInput('=');   return; }
+    if (e.key === 'Backspace')        { handleInput('backspace'); return; }
+    if (e.key === 'Escape')           { handleInput('clear');     return; }
+    if (e.key === '.')                { handleInput('.');   return; }
+});
