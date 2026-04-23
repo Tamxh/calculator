@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c9e8f0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background: #222;
+    border: 4px solid #111;
+    border-radius: 16px;
+    padding: 16px;
+    width: 340px;
+}
+
+/* ── Display ── */
+.display {
+    background: #b0b8b8;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 12px;
+    text-align: right;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.display .expression {
+    font-size: 13px;
+    color: #555;
+    min-height: 18px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.display .current {
+    font-size: 48px;
+    font-weight: 400;
+    color: #111;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Button grid ── */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 22px 10px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: filter 0.1s, transform 0.08s;
+    color: #111;
+}
+
+button:hover  { filter: brightness(1.15); }
+button:active { transform: scale(0.94); filter: brightness(0.9); }
+
+/* digit buttons — teal */
+.btn-digit {
+    background: #3a8080;
+    color: #ddd;
+}
+
+.btn-zero {
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 24px;
+}
+
+.btn-back {
+    background: #5b8dd9;
+    color: #111;
+}
+
+/* operator buttons — orange */
+.btn-op {
+    background: #e8922a;
+    color: #111;
+}
+
+/* equals — orange */
+.btn-eq {
+    background: #e8922a;
+    color: #111;
+}
+
+/* AC / clear — blue */
+.btn-clear {
+    background: #5b8dd9;
+    color: #111;
+}
+
+/* +/- and % — blue */
+.btn-special {
+    background: #5b8dd9;
+    color: #111;
+}
+
+/* decimal — teal */
+.btn-dot {
+    background: #3a8080;
+    color: #ddd;
+}
